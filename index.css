@@ -1,0 +1,1090 @@
+@charset "UTF-8";
+
+/* 全体 */
+body {
+	font-family: "Zen Old Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+	width: 100%;
+	background-color: #eef0e7;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	color: #0c5900;
+	font-size: 16px;
+}
+
+/* ファーストビュー */
+.fv {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* ファーストビュー > 背景動画 */
+.fv video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+	z-index: -1;
+	display: block;
+}
+
+/* ファーストビュー > タイトル */
+.fv-content {
+	position: absolute;
+	top: 40%;
+	left: 5%;
+	z-index: 1;
+	color: #eef0e7;
+	text-align: center;
+	font-size: 30px;
+}
+
+/* ファーストビュー > タイトル1行目 */
+.fv-content h1:first-child {
+	text-align: left;
+	margin: 0;
+	font-size: 60px;
+}
+
+/* ファーストビュー > サブタイトル2行目 */
+.fv-content h1:last-child {
+	position: relative;
+	top: 20px;
+	left: 350px;
+	text-align: left;
+	margin: 0;
+	font-size: 30px;
+}
+
+/* ナビゲーション枠 */
+#nav-box {
+	background-color: #eef0e7;
+	width: fit-content;
+	margin: 20px auto 0px auto;
+	padding: 10px 0;
+	border-radius: 10px;
+	position: relative;
+	z-index: 1;
+}
+
+/* ナビゲーション */
+#nav-box nav {
+	position: sticky;
+	top: 0;
+}
+
+/* ナビを隠す状態 */
+nav.hide {
+	transform: translateY(-100%);
+}
+
+/* 各項目 */
+ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	padding: 0 10px;
+	margin: 0;
+}
+
+/* 各項目 */
+li {
+	font-size: 14px;
+}
+
+/* 各項目 */
+a {
+	text-decoration: none;
+	color: #0c5900;
+	display: block;
+	padding: 8px 20px;
+	border-radius: 5px;
+	transition: all 0.3s;
+}
+
+ul li a.active,
+ul li a:hover {
+	background-color: #0c5900;
+	color: #eef0e7;
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+	display: none;
+}
+
+/* スクロールインジケーター外枠 */
+.scroll-indicator {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 45px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+/* スクロールテキスト */
+.scroll-text {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #eef0e7;
+	font-size: 12px;
+	z-index: 2;
+	font-size: medium;
+	font-weight: bold;
+}
+
+/* スクロールテキスト > ライン */
+.scroll-indicator span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #eef0e7;
+	animation: scrollDown 1.5s infinite ease-in-out;
+}
+
+/* スクロールテキスト > ラインのアニメーション */
+@keyframes scrollDown {
+	0% {
+		top: -100%;
+	}
+	100% {
+		top: 100%;
+	}
+}
+
+/* 各タイトル */
+h2 {
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+/* セクション1：はじめに */
+#first-sec {
+	height: 900px;
+	padding: 100px 0px;
+}
+
+/* はじめに > メッセージ */
+.intro-text {
+	line-height: 4;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+/* はじめに > レスポンシブ設計 */
+.attention-text {
+	text-align: center;
+	margin: 0 auto;
+}
+/* セクション2：プロフィール */
+#personality-sec {
+	padding: 100px 0px;
+	overflow: hidden;
+}
+
+/* プロフィール > タイトル */
+#personality-sec > h2 {
+	margin-bottom: 30px;
+}
+
+/* プロフィール > メッセージ */
+#personality-sec > p {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* プロフィール > フォーマット調整 */
+.items-row {
+	display: flex;
+	justify-content: center;
+	display: flex;
+	gap: 40px;
+	width: max-content;
+	animation: slide-left 80s linear infinite;
+}
+
+/* プロフィール > 横スライドアニメーション */
+@keyframes slide-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+/* プロフィール > 横スライドアニメーション(ホバー時) */
+#personality-sec .items-row:hover {
+	animation-play-state: paused;
+}
+
+/* プロフィール > プロフィールカード */
+.personality-card {
+	position: relative;
+	width: 500px;
+	height: auto;
+	background: #fff;
+	border-radius: 30px;
+	padding: 20px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+	flex-shrink: 0;
+}
+
+/* プロフィール > イメージ画 */
+.personality-image img {
+	width: 350px;
+	height: auto;
+	border-radius: 20px;
+}
+
+/* プロフィール > 縦書きタイトル */
+.personality-title {
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	writing-mode: vertical-rl;
+	font-size: 35px;
+	letter-spacing: 0.2em;
+	color: #2d5e2e;
+	font-weight: bold;
+}
+
+/* プロフィール > テキストエリア */
+.personality-text {
+	margin-top: 40px;
+}
+
+/* プロフィール > タイトル */
+.personality-text h3 {
+	font-size: 26px;
+	margin-bottom: 20px;
+}
+
+/* プロフィール > テキスト */
+.personality-text p {
+	line-height: 2;
+	font-size: 16px;
+}
+
+/* セクション3：経歴 */
+#career-sec {
+	padding: 100px 0px 200px 0px;
+}
+
+/* プロフィール > タイトル */
+#career-sec > h2 {
+	margin-bottom: 30px;
+}
+
+/* プロフィール > メッセージ */
+#career-sec > p {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* 経歴イメージ図を縮小 */
+#career-sec .step:nth-of-type(3) .icon-circle img:nth-child(1) {
+	transform: scale(0.8);
+}
+
+/* 経歴イメージ図を上に移動 */
+#career-sec .step:nth-of-type(1) .icon-circle img:nth-child(3) {
+	transform: translateY(-10px);
+}
+
+/* 経歴 > 経歴フロー */
+.career-flow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+/* 経歴 > 経歴カード */
+.step {
+	background: #fff;
+	border-radius: 20px;
+	padding: 25px;
+	width: 240px;
+	height: 400px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s ease;
+}
+
+.step > p {
+	margin-top: 50px;
+}
+
+/* 経歴カード > ホバー時 */
+.step:hover {
+	transform: translateY(-5px);
+}
+
+/* 経歴 > 経歴タイトル */
+.step-title {
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+/* 経歴 > 経歴イメージ図枠 */
+.icon-circle {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto 20px;
+	border-radius: 50%;
+	background-color: #fdf8f8;
+	overflow: hidden;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 経歴 > 経歴イメージ図 */
+.icon-circle img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	opacity: 0;
+	animation: fadeSwitch 9s infinite;
+}
+
+/* イメージ図1枚目の画像変換 */
+.fade-anim img:nth-child(1) {
+	animation-delay: 0s;
+}
+
+/* イメージ図2枚目の画像変換 */
+.fade-anim img:nth-child(2) {
+	animation-delay: 3s;
+}
+
+/* イメージ図3枚目の画像変換 */
+.fade-anim img:nth-child(3) {
+	animation-delay: 6s;
+}
+
+/* イメージ図の画像変換アニメーション */
+@keyframes fadeSwitch {
+	0%,
+	30% {
+		opacity: 1;
+	}
+	35%,
+	100% {
+		opacity: 0;
+	}
+}
+
+/* 経歴 > 矢印 */
+.arrow {
+	font-size: 18px;
+	color: #999;
+	opacity: 0.6;
+}
+
+/* セクション4：スキル */
+#skill-sec {
+	width: 100%;
+	background-color: #35453f;
+	padding: 50px 0px;
+}
+
+/* スキル > タイトル */
+#skill-sec h2 {
+	color: #eef0e7;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* スキル > 説明 */
+#skill-sec .description {
+	color: #eef0e7;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+/* スキル > 説明文 */
+#skill-sec h3 {
+	color: #eef0e7;
+	font-size: 23px;
+	text-align: center;
+}
+
+/* スキル > 枠 */
+.skills {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 50px;
+	flex-wrap: wrap;
+}
+
+/* スキル > 各項目 */
+.skill {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+	margin-bottom: 80px;
+}
+
+/* スキル > 各項目イメージアイコン */
+.skill-icon {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* スキル > 各項目イメージ */
+.skill-icon img {
+	width: 60%;
+	height: auto;
+	object-fit: contain;
+}
+
+/* スキル > 各項目名 */
+.skill p {
+	font-size: 18px;
+	color: #eef0e7;
+	margin-bottom: 0px;
+}
+
+/* スキル > 三つ星 */
+.stars {
+	font-size: 1.2em;
+	color: gold;
+}
+
+/* セクション5：ポートフォリオ */
+#portfolio-sec {
+	padding: 100px 0px;
+}
+
+/* ポートフォリオ > タイトル */
+#portfolio-sec h2 {
+	text-align: center;
+}
+
+/* ポートフォリオ > カード */
+.card {
+	background: white;
+	border-radius: 12px;
+	padding: 30px;
+	width: 800px;
+	margin: 50px auto 100px auto;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	transform: translateY(30px);
+}
+
+/* ポートフォリオ > 項目枠 */
+.tag {
+	padding: 6px 20px;
+	border-radius: 8px;
+	color: white;
+	font-weight: bold;
+}
+
+/* ポートフォリオ > コーディング/ドキュメント項目 */
+.tag.yellow {
+	background-color: #d6b25e;
+	margin-bottom: 10px;
+	width: 100px;
+}
+
+/* ポートフォリオ > アプリ名項目 */
+.tag.green {
+	background-color: #2d5e2e;
+	margin-bottom: 30px;
+	width: 300px;
+}
+
+/* ポートフォリオ > イメージ図/説明文大枠 */
+.content {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+/* ポートフォリオ > イメージ図 */
+.app-image {
+	width: 50%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+/* ポートフォリオ > 説明文 */
+#portfolio-sec .description {
+	width: 50%;
+	background-color: #ddd;
+	border-radius: 10px;
+	padding: 30px;
+	text-align: center;
+	font-size: 1.2rem;
+	height: 200px;
+}
+
+/* ポートフォリオ > 各ポートフォリオ表示(透明) */
+.fade-in {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.8s ease-out;
+}
+
+/* ポートフォリオ > 各ポートフォリオ表示 */
+.fade-in.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* セクション6：さいごに */
+#finally-sec {
+	position: relative;
+}
+
+/* さいごに > 背景動画 */
+#finally-sec .fv video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+	z-index: -1;
+}
+
+/* さいごに > 背景動画 */
+#finally-sec .fv::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index: 0;
+}
+
+/* さいごに > メッセージ */
+#finally-sec .fv-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #0c5900;
+	z-index: 1;
+	width: 100%;
+}
+
+.fv-content p {
+	font-size: 16px;
+	line-height: 4;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 700px;
+}
+
+/* フッター */
+footer {
+	padding: 0px 0px 50px 0px;
+	background-color: #35453f;
+}
+
+/* フッター `> メッセージ */
+footer p {
+	color: #eef0e7;
+	text-align: center;
+	margin: 0px;
+}
+
+/* モバイル版の場合 */
+@media screen and (max-width: 756px) {
+	/* 全体 */
+	body {
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	/* ファーストビュー */
+	header.fv {
+		margin-bottom: 100px;
+	}
+
+	/* ファーストビュー > タイトル1行目 */
+	.fv-content h1:first-child {
+		font-size: 28px;
+		margin-bottom: 10px;
+	}
+
+	/* ファーストビュー > サブタイトル2行目 */
+	.fv-content h1:last-child {
+		position: relative;
+		top: 10px;
+		left: 30px;
+		text-align: left;
+		margin: 0;
+		font-size: 22px;
+	}
+
+	/* ナビゲーション枠 */
+	#nav-box {
+		display: none;
+	}
+
+	/* ハンバーガーメニューボタン */
+	.btn-trigger {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		width: 50px;
+		height: 44px;
+		cursor: pointer;
+		z-index: 10000;
+	}
+
+	/* ハンバーガーメニュー > 線 */
+	.btn-trigger span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background-color: #fff;
+		border-radius: 4px;
+	}
+
+	/* ハンバーガーメニュー > 線1本目 */
+	.btn-trigger span:nth-of-type(1) {
+		top: 0;
+		animation: btn18-bar01 0.5s forwards;
+	}
+
+	/* ハンバーガーメニュー > 線2本目 */
+	.btn-trigger span:nth-of-type(2) {
+		top: 20px;
+		animation: btn18-bar02 0.5s forwards;
+	}
+
+	/* ハンバーガーメニュー > 線3本目 */
+	.btn-trigger span:nth-of-type(3) {
+		bottom: 0;
+		animation: btn18-bar03 0.5s forwards;
+	}
+
+	/* ハンバーガーメニュー > 線1本目アニメーション */
+	@keyframes btn18-bar01 {
+		from {
+			transform: translateY(20px) rotate(-45deg);
+		}
+		to {
+			transform: translateY(0) rotate(0);
+		}
+	}
+
+	/* ハンバーガーメニュー > 線2本目アニメーション */
+	@keyframes btn18-bar02 {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* ハンバーガーメニュー > 線3本目アニメーション */
+	@keyframes btn18-bar03 {
+		from {
+			transform: translateY(-20px) rotate(45deg);
+		}
+		to {
+			transform: translateY(0) rotate(0);
+		}
+	}
+
+	/* ハンバーガーメニュー > 波紋 */
+	#btn18::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		content: "";
+		width: 30px;
+		height: 30px;
+		margin: -15px 0 0 -15px;
+		border-radius: 50%;
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		opacity: 0;
+	}
+
+	/* ハンバーガーメニュー > ボタン押下後 */
+	#btn18.active::after {
+		animation: circle 0.5s;
+	}
+
+	/* ハンバーガーメニュー > 波紋アニメーション */
+	@keyframes circle {
+		0% {
+			transform: scale(0.1);
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			transform: scale(3.5);
+			opacity: 0;
+		}
+	}
+
+	/* ハンバーガーメニュー > 線1本目アクティブ時 */
+	#btn18.active span:nth-of-type(1) {
+		animation: active-btn18-bar01 0.5s 0.5s forwards;
+	}
+
+	/* ハンバーガーメニュー > 線2本目アクティブ時 */
+	#btn18.active span:nth-of-type(2) {
+		animation: active-btn18-bar02 0.5s 0.5s forwards;
+	}
+
+	/* ハンバーガーメニュー > 線3本目アクティブ時 */
+	#btn18.active span:nth-of-type(3) {
+		animation: active-btn18-bar03 0.5s 0.5s forwards;
+	}
+
+	/* ハンバーガーメニュー > 線1本目アクティブ時アニメーション */
+	@keyframes active-btn18-bar01 {
+		to {
+			transform: translateY(20px) rotate(-45deg);
+		}
+	}
+
+	/* ハンバーガーメニュー > 線2本目アクティブ時アニメーション */
+	@keyframes active-btn18-bar02 {
+		to {
+			opacity: 0;
+		}
+	}
+
+	/* ハンバーガーメニュー > 線2本目アクティブ時アニメーション */
+	@keyframes active-btn18-bar03 {
+		to {
+			transform: translateY(-20px) rotate(45deg);
+		}
+	}
+
+	/* ハンバーガーメニュー > ナビゲーション */
+	.hamburger-menu {
+		display: block;
+		position: fixed;
+		/* top: 0;
+		left: 0; */
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(238, 240, 231, 0.95);
+		z-index: 9999;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
+	}
+
+	/* ハンバーガーメニュー > ナビゲーションメニュー表示 */
+	.hamburger-menu.open {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	/* ハンバーガーメニュー > ナビゲーション > 各項目 */
+	.hamburger-menu ul {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+	}
+
+	/* ハンバーガーメニュー > ナビゲーション > 各項目 */
+	.hamburger-menu li {
+		font-size: 20px;
+	}
+
+	/* ハンバーガーメニュー > ナビゲーション > 各項目ホバー時 */
+	.hamburger-menu ul li a.active,
+	.hamburger-menu ul li a:hover {
+		background-color: transparent;
+		color: inherit;
+	}
+
+	/* ★ メニュー表示中はスクロール禁止 */
+	body.menu-open {
+		overflow: hidden;
+	}
+
+	/* メイン */
+	.main-inner {
+		padding: 0px 30px;
+	}
+
+	/* 各タイトル */
+	h2 {
+		font-size: 22px;
+	}
+
+	/* 各サブタイトル */
+	h3 {
+		font-size: 18px;
+	}
+
+	/* セクション1：はじめに */
+	#first-sec {
+		height: 1000px;
+		/* padding-bottom: 100px; */
+	}
+
+	/* はじめに > タイトル */
+	#first-sec h2 {
+		margin: 0px 0px 35px 0px;
+	}
+
+	/* はじめに > メッセージ枠 */
+	.intro-text {
+		line-height: 2;
+		text-align: left;
+	}
+
+	/* はじめに > サブタイトル */
+	.intro-text h3 {
+		margin: 0px 0px 25px 0px;
+	}
+
+	.attention-text {
+		text-align: left;
+	}
+
+	/* セクション2：プロフィール */
+	#personality-sec {
+		padding: 50px 0px;
+	}
+
+	/* プロフィール > メッセージ */
+	#personality-sec > p {
+		text-align: left;
+		margin-bottom: 30px;
+	}
+
+	/* プロフィール > カード */
+	.personality-card {
+		position: relative;
+		width: 290px;
+		height: auto;
+		padding: 30px 20px 20px 20px;
+	}
+
+	/* プロフィール > イメージ画 */
+	.personality-image img {
+		width: 250px;
+		height: auto;
+	}
+
+	/* プロフィール > 縦書きタイトル */
+	.personality-title {
+		position: absolute;
+		top: 40px;
+		right: 5px;
+		writing-mode: vertical-rl;
+		font-size: 30px;
+	}
+
+	/* プロフィール > テキストエリア */
+	.personality-text {
+		margin-top: 10px;
+	}
+
+	/* プロフィール > サブタイトル */
+	.personality-text h3 {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	/* プロフィール > カード表示 */
+	.personality-card.fade-up-right {
+		opacity: 0;
+		transform: translate(40px, 40px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
+	}
+
+	/* プロフィール > カード表示 */
+	.personality-card.fade-up-right.active {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+
+	/* ★ 横スクロール解除 */
+	.items-row {
+		flex-direction: column;
+		width: 100%;
+		gap: 40px;
+	}
+
+	/* セクション3：経歴 */
+	#career-sec {
+		padding: 50px 0px 100px 0px;
+	}
+
+	/* プロフィール > メッセージ */
+	#career-sec > p {
+		text-align: left;
+		margin-bottom: 30px;
+	}
+
+	/* 経歴 > 矢印 */
+	.arrow {
+		color: transparent;
+		position: relative;
+	}
+
+	/* 経歴 > 矢印表示後 */
+	.arrow::after {
+		content: "▼";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 18px;
+		color: #999;
+		opacity: 0.6;
+	}
+
+	/* スキル > 説明 */
+	#skill-sec .description {
+		text-align: left;
+		padding: 0px 30px 30px 50px;
+	}
+
+	/* スキル > 枠 */
+	.skills {
+		display: grid;
+		gap: 40px 20px;
+		justify-items: center;
+		margin: 0 auto;
+	}
+
+	/* スキル > アイコン2列 */
+	.skills.cols-2 {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 260px;
+		gap: 30px 10px;
+	}
+
+	/* スキル > アイコン3列 */
+	.skills.cols-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	/* スキル > 各項目イメージアイコン */
+	.skill-icon {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+
+	/* スキル > 各項目名 */
+	.skill p {
+		font-size: 18px;
+		color: #eef0e7;
+		margin-bottom: 0px;
+	}
+
+	/* スキル > 三つ星 */
+	.stars {
+		font-size: 15px;
+	}
+
+	/* セクション5：ポートフォリオ */
+	#portfolio-sec {
+		padding: 50px 0px;
+	}
+
+	/* ポートフォリオ > カード */
+	.card {
+		width: 250px;
+	}
+
+	/* ポートフォリオ > 項目枠 */
+	.tag {
+		padding: 6px 20px;
+		font-weight: bold;
+	}
+
+	/* ポートフォリオ > コーディング/ドキュメント項目 */
+	.tag.yellow {
+		width: 100px;
+	}
+
+	/* ポートフォリオ > アプリ名項目 */
+	.tag.green {
+		background-color: #2d5e2e;
+		margin-bottom: 30px;
+		width: 150px;
+	}
+
+	/* ポートフォリオ > イメージ図/説明文大枠 */
+	.content {
+		display: block;
+		gap: 0;
+	}
+
+	/* ポートフォリオ > イメージ図 */
+	.app-image {
+		width: 100%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	/* ポートフォリオ > 説明文 */
+	#portfolio-sec .description {
+		width: auto;
+	}
+
+	/* さいごに > メッセージ枠 */
+	#finally-sec .fv-content {
+		width: 100%;
+		padding: 0px 30px;
+		box-sizing: border-box;
+	}
+
+	/* さいごに > メッセージ */
+	#finally-sec .fv-content p {
+		text-align: left;
+		line-height: 1.7;
+		margin: 16px 0px;
+	}
+}

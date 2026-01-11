@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./index.css" />
+		<title>MyPhortfolio</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="./index.js"></script>
+	</head>
+	<body>
+		<!-- ヘッダー -->
+		<header>
+			<section class="fv">
+				<video autoplay muted loop playsinline>
+					<source src="../video/forest_firstview.mp4" type="video/mp4" />
+				</video>
+				<!-- PC版：ナビゲージョン -->
+				<div id="nav-box">
+					<nav>
+						<ul>
+							<li><a href="#first-sec">はじめに</a></li>
+							<li><a href="#personality-sec">プロフィール</a></li>
+							<li><a href="#career-sec">経歴</a></li>
+							<li><a href="#skill-sec">スキル</a></li>
+							<li><a href="#portfolio-sec">ポートフォリオ</a></li>
+							<li><a href="#finally-sec">さいごに</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- モバイル版：ハンバーガーメニュー -->
+				<nav class="hamburger-menu">
+					<ul>
+						<li><a href="#">ホーム</a></li>
+						<li><a href="#first-sec">はじめに</a></li>
+						<li><a href="#personality-sec">プロフィール</a></li>
+						<li><a href="#career-sec">経歴</a></li>
+						<li><a href="#skill-sec">スキル</a></li>
+						<li><a href="#portfolio-sec">ポートフォリオ</a></li>
+						<li><a href="#finally-sec">さいごに</a></li>
+					</ul>
+				</nav>
+				<div class="btn-trigger" id="btn18">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="fv-content">
+					<h1>“Thank you for stopping by. ”</h1>
+					<h1>Here’s a little world I’ve created.</h1>
+				</div>
+				<div class="scroll-indicator"><span></span></div>
+			</section>
+			<p class="scroll-text">Scroll</p>
+		</header>
+		<main>
+			<div class="main-inner">
+				<!-- セクション1：はじめに -->
+				<section id="first-sec">
+					<h2>はじめに</h2>
+					<div class="intro-text">
+						<h3>
+							ユーザーに寄り添いながら、想いを形にするフロントエンドエンジニア
+						</h3>
+						<p>こちらのポートフォリオを見てくださり、ありがとうございます。</p>
+						<p>
+							私自身自然が大好きなことから、緑色いっぱいなサイトにしてみました。
+						</p>
+						<p>
+							共に働かせていただくにあたり、少しでも私自身について知っていただけると良いなと思い、
+						</p>
+						<p>プロフィールやスキル、作成物などを作成しました。</p>
+						<p>想いを込めて作り上げた作品たちを、お届けします。</p>
+					</div>
+					<div class="attention-text">
+						<h3>レスポンシブ設計の仕様について</h3>
+							<p>PCとモバイルでアニメーション体験を分けており、</p>
+							<p>初回表示および実際の利用シーンを優先した設計としています。</p>
+							<p>そのため、DevTools上での即時切り替えでは挙動が完全に同期しない場合があります。</p>
+							<p>確認時はページのリロードをお願いいたします。</p>
+							<p>なお、リロード後や実機での閲覧においては、想定通りの表示となります。</p>
+					</div>
+				</section>
+				<!-- セクション2：プロフィール -->
+				<section id="personality-sec">
+					<h2>プロフィール</h2>
+					<p>
+						ホバーすると、スライドアニメーションが止まります。
+						気になるテーマカードがあった際は、是非止めてみてください！
+					</p>
+					<div class="items-row">
+						<!-- プロフィールカード -->
+						<div class="personality-card">
+							<!-- プロフィールイメージ画 -->
+							<div class="personality-image">
+								<img
+									src="../img/profile_personality.png"
+									alt="personality_image"
+								/>
+							</div>
+							<!-- 私の性格 -->
+							<div class="personality-title">Personality</div>
+							<!-- テキスト -->
+							<div class="personality-text">
+								<h3>私の性格</h3>
+								<p>
+									人の笑顔を見ることが大好きです！会話しながら相手のことを知っていく過程も
+									好きなので、初対面でも緊張はあまりしない方です。<br />
+									他人に対してはないのですが、自分自身に対してだけは負けず嫌いで、
+									目標達成するまで自分自身と戦っています。<br />
+									現在は、仲間の良さを引き出しながらプロジェクトを推進できる
+									フロントエンドエンジニアを目指し、日々勉強しています。
+								</p>
+							</div>
+						</div>
+						<div class="personality-card">
+							<!-- プロフィールイメージ画 -->
+							<div class="personality-image">
+								<img src="../img/profile_hobby.png" alt="Hobby_image" />
+							</div>
+							<!-- 私の趣味 -->
+							<div class="personality-title">Hooby</div>
+							<!-- テキスト -->
+							<div class="personality-text">
+								<h3>私の趣味</h3>
+								<p>
+									都会より、自然の中にいることが好きです！<br />
+									森の中でコーヒーを淹れたり、
+									みんなでBBQをしたり、焚き火の中にお芋を入れて、
+									ほかほかお芋が甘くなるまでぼーっと自然の中で深呼吸をしたり。<br />
+									また、森と逆に海へ魚釣りに行くことも好きです！
+									釣り人の方と「何が釣れていますか〜？」と話したり、
+									ぼーっとお魚を釣った後に、捌いてご飯を作ったり。<br />
+									そんな何気ないほっこりする時間が大好きです！
+								</p>
+							</div>
+						</div>
+						<div class="personality-card">
+							<!-- プロフィールイメージ画 -->
+							<div class="personality-image">
+								<img
+									src="../img/profile_for_a_change.png"
+									alt="for_a_change_image"
+								/>
+							</div>
+							<!-- 私の趣味 -->
+							<div class="personality-title">Refresh</div>
+							<!-- テキスト -->
+							<div class="personality-text">
+								<h3>気分転換方法は？？</h3>
+								<p>
+									歌うこと！一択ですね笑笑
+									幼い頃からミュージカルが好きで、歌うこと、踊ることが大好きです。
+									大学生の頃は、ゴスペルサークルに入り、博多駅で行われるイベントで、
+									ハイソプラノ枠で歌っていました。<br />
+									カラオケでは、Mrs. GREEN APPLEさんの曲をよく歌います！
+									ケセラセラや、僕のこと、ライラックなど、明るく元気な曲や
+									大変な状況でも、そんな自分すらも受け止めて、前に進む気持ちを持った曲など、
+									背中を押される曲が多いことから大好きです。
+								</p>
+							</div>
+						</div>
+						<div class="personality-card">
+							<!-- プロフィールイメージ画 -->
+							<div class="personality-image">
+								<img
+									src="../img/profile_mbti.png"
+									alt="for_a_change_image"
+								/>
+							</div>
+							<!-- 私の趣味 -->
+							<div class="personality-title">MBTI</div>
+							<!-- テキスト -->
+							<div class="personality-text">
+								<h3>診断結果：ENFJ（主人公）</h3>
+								<p>
+									私は性格診断結果、ENFJ（主人公）でした。</br>
+									ENFJ（主人公）は、人の意図や感情をくみ取りながら、
+									チーム全体が前に進むよう働きかける特性を持つタイプです。</br>
+									また、ENFJの強みであるコミュニケーション力を活かし、
+									デザイナー・エンジニア・他部署の方とも
+									立場や知識量に合わせて伝え方を調整することを大切にしています。</br>
+									相談しやすく、声をかけやすい存在であることを心がけています。</br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- セクション3：経歴 -->
+				<section id="career-sec">
+					<h2>経歴</h2>
+					<p>
+						履歴書 / 職務経歴書に詳細を記載しているので、
+						ここでは簡単に、これまで経験してきた職務の流れだけお伝えします。
+					</p>
+					<div class="career-flow">
+						<!-- 経歴1 -->
+						<div class="step">
+							<h3 class="step-title">グランドスタッフ</h3>
+							<div class="icon-circle fade-anim">
+								<img src="../img/img1-1.png" alt="" />
+								<img src="../img/img1-2.png" alt="" />
+								<img src="../img/img1-3.png" alt="" />
+							</div>
+							<p>多様な顧客対応と、状況判断が求められる現場オペレーション</p>
+						</div>
+						<div class="arrow">▶</div>
+						<!-- 経歴2 -->
+						<div class="step">
+							<h3 class="step-title">フロントエンドエンジニア</h3>
+							<div class="icon-circle fade-anim">
+								<img src="../img/img2-1.png" alt="" />
+								<img src="../img/img2-2.png" alt="" />
+								<img src="../img/img2-3.png" alt="" />
+							</div>
+							<p>
+								業務において、要件整理・設計・テスト・リリース準備 のフェーズを担当
+							</p>
+						</div>
+						<div class="arrow">▶</div>
+						<!-- 経歴3 -->
+						<div class="step">
+							<h3 class="step-title">ITコンサルタント</h3>
+							<div class="icon-circle fade-anim">
+								<img src="../img/img3-1.png" alt="" />
+								<img src="../img/img3-2.png" alt="" />
+								<img src="../img/img3-3.png" alt="" />
+							</div>
+							<p>
+								HR系SaaS導入に伴う業務整理・要件整理・システム支援
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- セクション4：スキル -->
+			<section id="skill-sec">
+				<h2>スキル</h2>
+				<div class="description">
+					<p>
+						これまで私が使用してきた言語、フレームワーク、ライブラリ、ツール、
+					</p>
+					<p>OSに関しては、以下にまとめております！</p>
+					<p>まだまだ知識が足りず、至らない点があるかと思いますが、</p>
+					<p>常に積極的に学びたい意欲は人一倍強いです！</p>
+					<br />
+					<p>★☆☆： 現在、学習中</p>
+					<p>★★☆：自分自身で調べながら対応できる</p>
+					<p>★★★：他人に教えられる</p>
+				</div>
+				<!-- 言語スキル -->
+				<h3>言語</h3>
+				<div class="skills cols-3">
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+								alt="HTML5"
+							/>
+						</div>
+						<p>HTML5</p>
+						<div class="stars">★★★</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+								alt="CSS3"
+							/>
+						</div>
+						<p>CSS3</p>
+						<div class="stars">★★★</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+								alt="CSS3"
+							/>
+						</div>
+						<p>javascript</p>
+						<div class="stars">★★☆</div>
+					</div>
+				</div>
+				<!-- フレームワーク・ライブラリスキル -->
+				<h3>フレームワーク・ライブラリ</h3>
+				<div class="skills cols-3">
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/backbonejs/backbonejs-original.svg"
+								alt="backbone.js"
+							/>
+						</div>
+						<p>backbone.js</p>
+						<div class="stars">★★☆</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg"
+								alt="jquery"
+							/>
+						</div>
+						<p>jquery</p>
+						<div class="stars">★★★</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
+								alt="vue.js"
+							/>
+						</div>
+						<p>vue.js</p>
+						<div class="stars">★★☆</div>
+					</div>
+				</div>
+				<!-- ツールスキル -->
+				<h3>ツール</h3>
+				<div class="skills cols-2">
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
+								alt="gitlab"
+							/>
+						</div>
+						<p>gitlab</p>
+						<div class="stars">★★★</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+								alt="github"
+							/>
+						</div>
+						<p>github</p>
+						<div class="stars">★★☆</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+								alt="VisualStudioCode"
+							/>
+						</div>
+						<p>VisualStudioCode</p>
+						<div class="stars">★★★</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+								alt="figma"
+							/>
+						</div>
+						<p>figma</p>
+						<div class="stars">★★☆</div>
+					</div>
+				</div>
+				<!-- OSスキル -->
+				<h3>OS</h3>
+				<div class="skills cols-2">
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg"
+								alt="windows"
+							/>
+						</div>
+						<p>windows</p>
+						<div class="stars">★★☆</div>
+					</div>
+					<div class="skill">
+						<div class="skill-icon">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg"
+								alt="mac"
+							/>
+						</div>
+						<p>mac</p>
+						<div class="stars">★★☆</div>
+					</div>
+				</div>
+			</section>
+			<div class="main-inner">
+				<!-- セクション5：ポートフォリオ -->
+				<section id="portfolio-sec">
+					<h2>ポートフォリオ</h2>
+					<div class="card fade-in">
+						<div class="tag yellow">コーディング</div>
+						<div class="tag green">アプリ名</div>
+						<div class="content">
+							<img
+								src="../img/portfolio_example.jpg"
+								alt="アプリ画像"
+								class="app-image"
+							/>
+							<div class="description">
+								<p>説明文</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card fade-in">
+						<div class="tag yellow">ドキュメント</div>
+						<div class="tag green">アプリ名</div>
+						<div class="content">
+							<img
+								src="../img/portfolio_example.jpg"
+								alt="figma_画面イメージ設計"
+								class="app-image"
+							/>
+							<div class="description">
+								<p>説明文</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- セクション6：さいごに -->
+			<section id="finally-sec">
+				<div class="fv">
+					<video autoplay muted loop playsinline>
+						<source src="../video/evenig.mp4" type="video/mp4" />
+					</video>
+					<div class="fv-content">
+						<h2>さいごに</h2>
+						<p>
+							ここまでポートフォリオをご覧いただき、本当にありがとうございました。
+						</p>
+						<p>
+							はじめに書いた通り、
+							このポートフォリオは「想いを形にする」ことを大切に作りました。
+						</p>
+						<p>
+							このサイトや作品を通して、自然や色、細かな表現が好きな自分らしさ、
+						</p>
+						<p>
+							私の考え方やものづくりへの姿勢が、少しでも伝わっていたら嬉しいです。
+						</p>
+						<p>
+							ご縁がありましたら、ぜひ一緒にものづくりができることを楽しみにしています。
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- フッター -->
+			<footer>
+				<p class="copyright">
+					&copy;<span id="year"></span> My Portfolio. All rights reserved.
+				</p>
+			</footer>
+		</main>
+	</body>
+</html>
